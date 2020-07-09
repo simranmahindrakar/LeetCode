@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int numberOfSteps (int num) {
+        long count=0;
+        while (num > 0)
+        {
+            if(num%2)   //Bool 1 is true.
+            {
+                num--;
+                count++;
+            }
+            else {
+                num=num/2;
+                count++;
+            }
+        }
+        return count;
+}
+};
