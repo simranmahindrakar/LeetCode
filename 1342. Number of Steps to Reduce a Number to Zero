@@ -17,3 +17,19 @@ public:
         return count;
 }
 };
+
+---------------------------------------------------------------------------------------------
+//better solution
+
+class Solution {
+public:
+    int numberOfSteps (int num) {
+        long count=0;
+        while (num > 0)
+        {
+           (num%2)? num-- : num/=2;
+            count++;
+        }
+        return count;
+}
+};
