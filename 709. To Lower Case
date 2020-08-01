@@ -5,3 +5,4 @@ public:
         return str;
     }
 };
+//how to convert a string to lower/upper case
