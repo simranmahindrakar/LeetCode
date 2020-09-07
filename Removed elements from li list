@@ -1,0 +1,35 @@
+ /**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* removeElements(ListNode* head, int val) {
+       ListNode* current = head;
+        if (head == NULL)
+            return head;
+        
+        while(current!=NULL && current->next!=NULL)
+        {
+            if(current->next->val == val)      //we are standing at the nth node and checking for the n+1th node. then we will change the link of the nth node to point to th n+2th node.
+            {
+                current->next = current->next->next;
+            }
+           else
+               current=current->next;
+        }
+          if(head->val == val)  //special case when the first node->val = val
+        {
+            head = head->next;
+              return head;
+        }
+        
+        return head;
+    }
+};
