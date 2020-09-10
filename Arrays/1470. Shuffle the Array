@@ -1,0 +1,13 @@
+class Solution {
+public:
+    vector<int> shuffle(vector<int>& nums, int n) {
+        vector<int> vec;                                     //new vector to store  the output
+        for(int index=0; index < n; index++)   //we run the loop just n times. push_back two elements at a time. So we end up pushing 2n elements.
+        {
+            vec.push_back(nums[index]);
+            vec.push_back(nums[index+n]);
+        }
+        return vec;
+        
+    }
+};
